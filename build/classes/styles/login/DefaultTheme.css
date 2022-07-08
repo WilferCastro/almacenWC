@@ -1,0 +1,20 @@
+.login{
+    -fx-font-size: 24;
+    -fx-font-weight: bold; 
+    -fx-text-fill: #000;
+    -fx-cursor: hand;
+}
+.login:hover{
+    -fx-background-color: #bc091c;
+    -fx-background-radius: 10;
+    -fx-text-fill: #fff;
+}
+
+.boton{
+    -fx-background-color: blue;
+    -fx-text-fill: #fff;
+    -fx-background-radius: 20;
+    -fx-font-size: 18;
+    -fx-font-weight: bold; 
+    -fx-cursor: hand;
+}

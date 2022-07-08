@@ -1,0 +1,72 @@
+.botones{
+    -fx-background-color:  #242e3f;
+    -fx-font-weight: bold;
+    -fx-font-size: 18;
+    -fx-cursor: hand;
+}
+
+.botones:hover{
+    -fx-border-width: 0 0 0 5;  
+    -fx-border-color: #3f51b5;
+/*    -fx-background-color:  #374151;*/
+}
+
+.linear-grad-to-left{
+    -fx-background-color: linear-gradient(to left,  #332b7d, #3f51b5);
+}
+
+.orange-gradient{
+    -fx-background-color: linear-gradient(to left,   #eeac4d,  #fea001);
+}
+
+.blue-gradient{
+    -fx-background-color: linear-gradient(to top,  #332b7d,  #132743);
+}
+
+.blue-gradientV2{
+    -fx-background-color: linear-gradient(to top, #333456,#060930);
+}
+
+.blue-purple{
+    -fx-background-color: linear-gradient(to right, #273587,#a706c3);
+}
+
+.pink-purple{
+    -fx-background-color: linear-gradient(to right, #f25997,#86519e);
+}
+
+.cerrar-sesion{
+    -fx-font-size: 24;
+    -fx-text-fill: #eee;
+}
+
+.cerrar-sesion:hover{
+    -fx-text-fill: #fff;
+}
+
+.red{
+    -fx-font-size: 28;
+    -fx-text-fill: #ccc;
+    -fx-cursor: hand;
+}
+
+.red:hover{
+/*    -fx-background-color: rgba(188,9,28,.50);*/
+    -fx-background-radius: 10;
+    -fx-background-color: #F05454;
+    -fx-text-fill:  #fff;
+}
+
+.botonesV2{
+    -fx-background-color:  transparent;
+    -fx-font-weight: bold;
+    -fx-font-size: 18;
+    -fx-cursor: hand;
+}
+
+.botonesV2:hover{
+    -fx-border-width: 0 0 5 0;  
+    -fx-border-color: #3f51b5;
+/*    -fx-background-color:  #374151;*/
+}
+

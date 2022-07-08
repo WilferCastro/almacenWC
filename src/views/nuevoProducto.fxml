@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="parent" prefHeight="565.0" prefWidth="734.0" styleClass="blue-gradient" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NuevoProductoController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="95.0" prefHeight="483.0" prefWidth="714.0" style="-fx-background-color: #fff; -fx-background-radius: 15;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <children>
+            <JFXTextField fx:id="producto" labelFloat="true" layoutX="15.0" layoutY="52.0" maxWidth="328.0" minWidth="149.0" prefHeight="45.0" prefWidth="328.0" promptText="Nombre del producto" unFocusColor="BLACK">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="btnAgregar" buttonType="RAISED" layoutX="560.0" layoutY="427.0" onAction="#agregarProducto" prefHeight="39.0" prefWidth="143.0" style="-fx-background-color: #3f51b5; -fx-background-radius: 20; -fx-cursor: hand;" text="Agregar" textFill="WHITE" AnchorPane.bottomAnchor="17.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/guardar-archivos.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="406.0" layoutY="427.0" onMouseClicked="#cerrar" prefHeight="39.0" prefWidth="143.0" style="-fx-background-color: F05454; -fx-background-radius: 20; -fx-cursor: hand;" text="Cerrar" textFill="WHITE" AnchorPane.bottomAnchor="17.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/senal.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnActualizar" buttonType="RAISED" layoutX="560.0" layoutY="427.0" onAction="#actualizarProducto" prefHeight="39.0" prefWidth="143.0" style="-fx-background-color: #3f51b5; -fx-background-radius: 20; -fx-cursor: hand;" text="Actualizar" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/editar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXTextArea fx:id="descripcion" labelFloat="true" layoutX="27.0" layoutY="242.0" maxWidth="328.0" minWidth="306.0" onKeyTyped="#tipadoDescripcion" prefHeight="204.0" prefWidth="328.0" promptText="Descripción" unFocusColor="BLACK">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXTextArea>
+            <Label fx:id="contador" layoutX="176.0" layoutY="453.0" text="0/500" />
+            <JFXTextField fx:id="venta" labelFloat="true" layoutX="14.0" layoutY="163.0" maxWidth="305.0" minWidth="149.0" onKeyTyped="#tipadoVenta" prefHeight="45.0" prefWidth="280.0" promptText="Precio de Venta" unFocusColor="BLACK">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXComboBox fx:id="categoria" layoutX="430.0" layoutY="268.0" onAction="#setData" prefHeight="35.0" prefWidth="259.0" promptText="Categoria" style="-fx-font-size: 14; -fx-cursor: hand;" visibleRowCount="7" />
+            <JFXTextField fx:id="compra" labelFloat="true" layoutX="416.0" layoutY="163.0" maxWidth="280.0" minWidth="149.0" onKeyTyped="#tipadoCompra" prefHeight="45.0" prefWidth="280.0" promptText="Precio de Compra" unFocusColor="BLACK">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="stock" labelFloat="true" layoutX="563.0" layoutY="52.0" maxWidth="274.0" minWidth="143.0" onKeyTyped="#tipadoStock" prefHeight="45.0" prefWidth="143.0" promptText="Stock" unFocusColor="BLACK">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="codigo" labelFloat="true" layoutX="360.0" layoutY="52.0" maxWidth="274.0" minWidth="149.0" prefHeight="45.0" prefWidth="193.0" promptText="Codigo" unFocusColor="BLACK">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="285.0" layoutY="172.0" text="*" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="339.0" layoutY="61.0" text="*" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXCheckBox fx:id="c1" checkedColor="#3f51b5" layoutX="393.0" layoutY="344.0" onAction="#codigo" text="Generar codigo automaticamente" unCheckedColor="BLACK">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXCheckBox>
+            <Spinner fx:id="spinner" layoutX="572.0" layoutY="371.0" prefHeight="25.0" prefWidth="125.0" style="-fx-font-size: 14;" visible="false" />
+            <Label fx:id="mensaje" layoutX="435.0" layoutY="374.0" text="Longitud del codigo" visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <Label fx:id="titulo" layoutX="14.0" layoutY="8.0" text="Registrar Nuevo Producto" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/recibido.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Label alignment="CENTER" layoutX="676.0" layoutY="10.0" onMouseClicked="#cerrar" prefHeight="44.0" prefWidth="44.0" styleClass="red" text="X" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

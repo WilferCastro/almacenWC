@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1120.0" style="-fx-background-color: #eef2f5;" stylesheets="@../styles/tables.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Compras_reportController">
+   <children>
+      <AnchorPane layoutX="69.0" layoutY="180.0" prefHeight="527.0" prefWidth="1060.0" style="-fx-background-color: #fff; -fx-background-radius: 20;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+         <effect>
+            <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+         </effect>
+         <children>
+            <TableView fx:id="tabla1" layoutY="14.0" onMouseClicked="#loadDetails" prefHeight="252.0" prefWidth="1060.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="c_id" prefWidth="70.0" text="N°" />
+                <TableColumn fx:id="c_cliente" prefWidth="194.0" text="Proveedor" />
+                  <TableColumn fx:id="c_vendedor" prefWidth="194.0" text="Vendedor" />
+                  <TableColumn fx:id="c_fecha" prefWidth="194.0" text="Fecha" />
+                  <TableColumn fx:id="c_total" prefWidth="194.0" text="Total" />
+                  <TableColumn fx:id="c_descuento" prefWidth="194.0" text="N° Comprobante" />
+              </columns>
+            </TableView>
+            <TableView fx:id="tabla2" layoutX="14.0" layoutY="305.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="p_id" prefWidth="70.0" text="ID" />
+                <TableColumn fx:id="p_codigo" prefWidth="180.0" text="Codigo" />
+                  <TableColumn fx:id="p_producto" prefWidth="213.0" text="Producto" />
+                  <TableColumn fx:id="p_precio" prefWidth="198.0" text="Precio" />
+                  <TableColumn fx:id="p_cantidad" prefWidth="198.0" text="Cantidad" />
+                  <TableColumn fx:id="p_total" prefWidth="194.0" text="Total" />
+              </columns>
+            </TableView>
+            <Label layoutX="7.0" layoutY="267.0" text="Detalle de compra N°" textFill="#03a9f4">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/detalle.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label fx:id="num_detalle" layoutX="332.0" layoutY="265.0" text="..." textFill="#03a9f4">
+               <font>
+                  <Font name="System Bold" size="34.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnDetalles" layoutX="863.0" layoutY="271.0" onAction="#ocultarDetalles" prefHeight="39.0" prefWidth="183.0" style="-fx-cursor: hand;" text="Ocultar Detalles" textFill="#03a9f4" visible="false" AnchorPane.rightAnchor="14.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/disable_eye_hidden_hide_internet_security_view_icon_127055.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label layoutX="511.0" layoutY="276.0" text="Registros:" textFill="#545050">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/archives_icon_129343.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label fx:id="contador" layoutX="622.0" layoutY="273.0" text="0" textFill="#a49e9e">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="30.0" text="Reporte de compras" textFill="#7d73ff">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/anadir-al-carrito.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <JFXDatePicker fx:id="datepick" defaultColor="#905aa1" editable="false" layoutX="912.0" layoutY="12.0" onAction="#loadDetailsFecha" prefWidth="171.0" promptText="Fecha de compra" style="-fx-cursor: hand;" AnchorPane.rightAnchor="37.0" />
+      <JFXComboBox fx:id="combo" layoutX="412.0" layoutY="10.0" onAction="#loadMoreDetails" prefWidth="224.0" promptText="Seleccione" style="-fx-font-size: 14; -fx-cursor: hand;" visibleRowCount="7" />
+      <JFXComboBox fx:id="combo2" layoutX="644.0" layoutY="10.0" onAction="#filtroMes" prefWidth="171.0" promptText="Seleccione" style="-fx-font-size: 14; -fx-cursor: hand;" visible="false" visibleRowCount="8" />
+   </children>
+</AnchorPane>

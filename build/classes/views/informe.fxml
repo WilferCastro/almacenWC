@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="620.0" prefWidth="1120.0" style="-fx-background-color: #eef2f5;" stylesheets="@../styles/tables.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.InformeController">
+   <children>
+      <AnchorPane layoutX="48.0" layoutY="62.0" prefHeight="544.0" prefWidth="1060.0" style="-fx-background-color: #fff; -fx-background-radius: 20;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+         <children>
+            <TableView fx:id="tabla1" layoutX="14.0" layoutY="66.0" onMouseClicked="#getDetails" prefHeight="255.0" prefWidth="1060.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="11.0">
+              <columns>
+                <TableColumn fx:id="c_id" prefWidth="70.0" text="N°" />
+                <TableColumn fx:id="c_cliente" prefWidth="170.0" text="Cliente" />
+                  <TableColumn fx:id="c_vendedor" prefWidth="139.0" text="Vendedor" />
+                  <TableColumn fx:id="c_fecha" prefWidth="172.0" text="Fecha" />
+                  <TableColumn fx:id="c_subtotal" prefWidth="120.0" text="Subtotal" />
+                  <TableColumn fx:id="c_total" prefWidth="120.0" text="Total" />
+                  <TableColumn fx:id="c_descuento" prefWidth="126.0" text="Descuento" />
+                  <TableColumn fx:id="c_domicilio" prefWidth="124.0" text="Domicilio" />
+              </columns>
+            </TableView>
+            <TableView fx:id="tabla2" layoutY="328.0" prefHeight="212.0" prefWidth="1060.0" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columns>
+                  <TableColumn fx:id="p_id" prefWidth="70.0" text="ID" />
+                  <TableColumn fx:id="p_codigo" prefWidth="180.0" text="Codigo" />
+                  <TableColumn fx:id="p_producto" prefWidth="213.0" text="Producto" />
+                  <TableColumn fx:id="p_precio" prefWidth="198.0" text="Precio" />
+                  <TableColumn fx:id="p_cantidad" prefWidth="198.0" text="Cantidad" />
+                  <TableColumn fx:id="p_total" prefWidth="195.0" text="Total" />
+               </columns>
+            </TableView>
+            <JFXButton fx:id="btnEstadisticas" layoutX="14.0" layoutY="272.0" onAction="#verPanel" style="-fx-cursor: hand;" text="Ver Estadisticas" textFill="#0015ff">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/estadistico.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label layoutX="402.0" layoutY="281.0" text="Registros:" textFill="#545050">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/archives_icon_129343.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label fx:id="contador" layoutX="512.0" layoutY="277.0" text="0" textFill="#a49e9e">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnOcultar" layoutX="700.0" layoutY="272.0" onAction="#hideDetails" prefHeight="42.0" prefWidth="189.0" style="-fx-cursor: hand;" text="Ocultar Detalles" textFill="#0015ff" visible="false" AnchorPane.rightAnchor="171.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/disable_eye_hidden_hide_internet_security_view_icon_127055.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnAnular" layoutX="886.0" layoutY="272.0" onAction="#anularVeCo" prefHeight="42.0" prefWidth="168.0" style="-fx-cursor: hand;" text="Anular Venta" textFill="#0015ff" visible="false" AnchorPane.rightAnchor="6.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/eliminar-simbolo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <AnchorPane fx:id="panel1" layoutX="24.0" layoutY="1.0" prefHeight="533.0" prefWidth="1050.0" style="-fx-background-color: #fff; -fx-background-radius: 20;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <JFXButton layoutX="14.0" layoutY="5.0" onAction="#ocultarPanel" style="-fx-cursor: hand;" text="Ocultar Estadísticas" textFill="#0015ff">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/disable_eye_hidden_hide_internet_security_view_icon_127055.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Label fx:id="verde" alignment="CENTER" layoutX="466.0" layoutY="27.0" prefHeight="130.0" prefWidth="270.0" style="-fx-background-color: #52b36e; -fx-background-radius: 10;" text="Ventas" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <effect>
+                        <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+                     </effect>
+                     <graphic>
+                        <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/venta.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label fx:id="morado" alignment="CENTER" layoutX="760.0" layoutY="27.0" prefHeight="130.0" prefWidth="270.0" style="-fx-background-color: #905aa1; -fx-background-radius: 10;" text="Compras" textAlignment="CENTER" textFill="WHITE" AnchorPane.rightAnchor="20.0">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <effect>
+                        <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+                     </effect>
+                     <graphic>
+                        <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/comprasV2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label fx:id="azul" alignment="CENTER" graphicTextGap="0.0" layoutX="466.0" layoutY="200.0" prefHeight="130.0" prefWidth="270.0" style="-fx-background-color: #3e9def; -fx-background-radius: 10;" text="Monto Ventas" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <effect>
+                        <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+                     </effect>
+                     <graphic>
+                        <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/US-dollar_25324.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label fx:id="naranja" layoutX="466.0" layoutY="376.0" prefHeight="130.0" prefWidth="270.0" style="-fx-background-color: #f2774b; -fx-background-radius: 10;" text="Productos vendidos" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <effect>
+                        <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+                     </effect>
+                     <graphic>
+                        <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/dinero.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label fx:id="rojo" alignment="CENTER" graphicTextGap="0.0" layoutX="760.0" layoutY="200.0" prefHeight="130.0" prefWidth="270.0" style="-fx-background-color: #d9544f; -fx-background-radius: 10;" text="Monto Compras" textAlignment="CENTER" textFill="WHITE" AnchorPane.rightAnchor="20.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <effect>
+                        <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+                     </effect>
+                     <graphic>
+                        <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/US-dollar_25324.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label fx:id="amarillo" layoutX="760.0" layoutY="376.0" prefHeight="130.0" prefWidth="270.0" style="-fx-background-color: #efad4d; -fx-background-radius: 10;" text="Productos comprados" textFill="WHITE" wrapText="true" AnchorPane.rightAnchor="20.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <effect>
+                        <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+                     </effect>
+                     <graphic>
+                        <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/anadir-al-carrito.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <PieChart fx:id="grafica" labelsVisible="false" layoutX="14.0" layoutY="120.0" prefHeight="386.0" prefWidth="420.0" title="Productos mas vendidos del día" />
+               </children>
+               <effect>
+                  <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+               </effect>
+            </AnchorPane>
+         </children>
+         <effect>
+            <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+         </effect>
+      </AnchorPane>
+      <Label fx:id="labeltext" layoutX="30.0" layoutY="14.0" text="VER INFORME DIARIO DE" textFill="#52b36e">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelCompras" alignment="CENTER" contentDisplay="RIGHT" layoutX="450.0" layoutY="12.0" onMouseClicked="#cargarCompras" prefHeight="38.0" prefWidth="156.0" style="-fx-cursor: hand;" text="COMPRAS">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/iconfinder-basket-4341280_120547.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Label fx:id="labelVentas" alignment="CENTER" contentDisplay="RIGHT" layoutX="294.0" layoutY="12.0" onMouseClicked="#cargarVentas" prefHeight="38.0" prefWidth="156.0" style="-fx-cursor: hand;" text="VENTAS" textFill="#52b36e">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/iconfinder-money-4341308_120564.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Separator layoutX="304.0" layoutY="51.0" prefHeight="3.0" prefWidth="154.0" />
+      <Label fx:id="fecha" layoutX="808.0" layoutY="12.0" prefHeight="35.0" prefWidth="282.0" text="SEPTIEMBRE/20/2021" textFill="#3f51b5" AnchorPane.rightAnchor="30.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/calendar-clock-icon_34472.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Separator layoutX="302.0" layoutY="7.0" orientation="VERTICAL" prefHeight="44.0" prefWidth="7.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="parent" prefHeight="565.0" prefWidth="734.0" styleClass="blue-gradient" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NuevoProveedorController">
+   <children>
+      <Label fx:id="titulo" layoutX="14.0" layoutY="8.0" prefHeight="48.0" prefWidth="342.0" text="Registrar Nuevo Proveedor" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/briefcase_icon-icons.com_52358.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <AnchorPane layoutX="22.0" layoutY="80.0" prefHeight="483.0" prefWidth="648.0" style="-fx-background-color: #fff; -fx-background-radius: 15;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <children>
+            <JFXTextField fx:id="proveedor" labelFloat="true" layoutX="14.0" layoutY="49.0" maxWidth="385.0" minWidth="149.0" prefHeight="45.0" prefWidth="333.0" promptText="Nombre o Razón social" unFocusColor="BLACK">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="telefono" labelFloat="true" layoutX="389.0" layoutY="138.0" maxWidth="306.0" minWidth="149.0" onKeyTyped="#tipadoTelefono" prefHeight="45.0" prefWidth="306.0" promptText="N° Teléfono" unFocusColor="BLACK" AnchorPane.rightAnchor="19.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="residencia" labelFloat="true" layoutX="14.0" layoutY="138.0" maxWidth="585.0" minWidth="149.0" prefHeight="45.0" prefWidth="333.0" promptText="Dirección" unFocusColor="BLACK">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="correo" labelFloat="true" layoutX="389.0" layoutY="49.0" maxWidth="395.0" minWidth="149.0" prefHeight="45.0" prefWidth="306.0" promptText="Correo de Contacto" unFocusColor="BLACK" AnchorPane.leftAnchor="389.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextArea fx:id="adicional" labelFloat="true" layoutX="24.0" layoutY="228.0" maxWidth="371.0" minWidth="317.0" onKeyTyped="#tipadoAdicional" prefHeight="220.0" prefWidth="358.0" promptText="Información Adicional" text="Fax:&#10;Página Web:&#10;Teléfono Alternativo:&#10;Descripción:" unFocusColor="BLACK" AnchorPane.leftAnchor="24.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXTextArea>
+            <JFXButton buttonType="RAISED" layoutX="406.0" layoutY="427.0" onMouseClicked="#cerraModal" prefHeight="39.0" prefWidth="143.0" style="-fx-cursor: hand; -fx-background-radius: 20; -fx-background-color: F05454;" text="Cerrar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/senal.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnAgregar" buttonType="RAISED" layoutX="560.0" layoutY="427.0" onAction="#addProveedor" prefHeight="39.0" prefWidth="143.0" style="-fx-cursor: hand; -fx-background-color: #3f51b5; -fx-background-radius: 20;" text="Agregar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/guardar-archivos.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnActualizar" buttonType="RAISED" layoutX="560.0" layoutY="427.0" onAction="#editProveedor" prefHeight="39.0" prefWidth="143.0" style="-fx-cursor: hand; -fx-background-color: #3f51b5; -fx-background-radius: 20;" text="Actualizar" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/editar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label fx:id="contador" layoutX="184.0" layoutY="453.0" text="51/300" />
+            <Label layoutX="338.0" layoutY="58.0" text="*" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" layoutX="676.0" layoutY="10.0" onMouseClicked="#cerraModal" prefHeight="44.0" prefWidth="44.0" styleClass="red" text="X" textFill="WHITE">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

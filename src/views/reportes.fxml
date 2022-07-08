@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" prefHeight="620.0" prefWidth="1120.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ReportesController">
+   <top>
+      <HBox prefHeight="45.0" prefWidth="1120.0" style="-fx-background-color: #171d2f;" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="btnInicio" onAction="#centrarInicio" prefHeight="42.0" prefWidth="196.0" styleClass="botonesV2" text="Inicio" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="1.0" left="4.0" right="4.0" top="1.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/menuV2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnVentas" onAction="#centrarVentas" prefHeight="42.0" prefWidth="207.0" styleClass="botonesV2" text="Reporte de ventas" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="1.0" left="4.0" right="4.0" top="1.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/informe-de-venta.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnCompras" onAction="#centrarCompras" prefHeight="42.0" prefWidth="225.0" styleClass="botonesV2" text="Reporte de compras" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="1.0" left="4.0" right="4.0" top="1.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/reporte.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnEstadisticas" onAction="#centrarEstadisticas" prefHeight="42.0" prefWidth="196.0" styleClass="botonesV2" text="Estadísticas" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="1.0" left="4.0" right="4.0" top="1.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/diseno.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <AnchorPane fx:id="panel1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eef2f5;" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="b_productos" layoutX="30.0" layoutY="35.0" onAction="#loadProductos" prefHeight="144.0" prefWidth="310.0" style="-fx-background-color: #3e9def; -fx-background-radius: 15;" text="Productos" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="30.0">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+               </effect>
+               <graphic>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/recibido.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="b_ventas" layoutX="410.0" layoutY="35.0" onAction="#loadVentas" prefHeight="144.0" prefWidth="310.0" style="-fx-background-color: #52b36e; -fx-background-radius: 15;" text="Ventas" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+               </effect>
+               <graphic>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/venta.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="b_clientes" layoutX="40.0" layoutY="220.0" onAction="#loadClientes" prefHeight="144.0" prefWidth="310.0" style="-fx-background-color: #f2774b; -fx-background-radius: 15;" text="Clientes" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="30.0">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+               </effect>
+               <graphic>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/cliente.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="b_compras" layoutX="777.0" layoutY="35.0" onAction="#loadCompras" prefHeight="144.0" prefWidth="310.0" style="-fx-background-color: #7864ee; -fx-background-radius: 15;" text="Compras" textAlignment="CENTER" textFill="WHITE" AnchorPane.rightAnchor="30.0">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+               </effect>
+               <graphic>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/comprasV2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="b_proveedores" layoutX="410.0" layoutY="220.0" onAction="#loadProveedores" prefHeight="144.0" prefWidth="310.0" style="-fx-background-color: #efad4d; -fx-background-radius: 15;" text="Proveedores" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="34.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+               </effect>
+               <graphic>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/briefcase_icon-icons.com_52358.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="b_usuarios" layoutX="780.0" layoutY="220.0" onAction="#loadUsuarios" prefHeight="144.0" prefWidth="310.0" style="-fx-background-color: #d9544f; -fx-background-radius: 15;" text="Usuarios" textAlignment="CENTER" textFill="WHITE" AnchorPane.rightAnchor="30.0">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+               </effect>
+               <graphic>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/usuario.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="40.0" layoutY="405.0" prefHeight="144.0" prefWidth="310.0" style="-fx-background-color: #44b6ae; -fx-background-radius: 15;" text="Reportes" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="30.0">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+               </effect>
+               <graphic>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/estadistico.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="410.0" layoutY="405.0" prefHeight="144.0" prefWidth="310.0" style="-fx-background-color: #5e728b; -fx-background-radius: 15;" text="Ajustes" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+               </effect>
+               <graphic>
+                  <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/configuraciones.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </center>
+   <stylesheets>
+      <URL value="@../styles/style.css" />
+      <URL value="@../styles/tables.css" />
+   </stylesheets>
+</BorderPane>

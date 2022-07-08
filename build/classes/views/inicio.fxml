@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.QuadCurve?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1290.0" style="-fx-background-color: #ccc;" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.InicioController">
+   <left>
+      <VBox fx:id="sidebar" prefHeight="627.0" prefWidth="250.0" spacing="5.0" style="-fx-background-color: #242e3f;" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="btn_Inicio" alignment="BASELINE_LEFT" graphicTextGap="15.0" onAction="#inicio" prefHeight="43.0" prefWidth="250.0" styleClass="botones" text="Inicio" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btn_ventas" alignment="BASELINE_LEFT" graphicTextGap="15.0" onAction="#ventas" prefHeight="43.0" prefWidth="250.0" styleClass="botones" text="Ventas" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/etiqueta-de-venta.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btn_compras" alignment="BASELINE_LEFT" graphicTextGap="15.0" onAction="#compras" prefHeight="43.0" prefWidth="250.0" styleClass="botones" text="Compras" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/compras.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btn_clientes" alignment="BASELINE_LEFT" graphicTextGap="15.0" onAction="#clientes" prefHeight="43.0" prefWidth="250.0" styleClass="botones" text="Clientes" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/clientes.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btn_proveedores" alignment="BASELINE_LEFT" graphicTextGap="15.0" onAction="#proveedores" prefHeight="43.0" prefWidth="250.0" styleClass="botones" text="Proveedores" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/maletin.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btn_informe" alignment="BASELINE_LEFT" graphicTextGap="15.0" onAction="#informe" prefHeight="43.0" prefWidth="250.0" styleClass="botones" text="Informe" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/informe-de-venta.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btn_productos" alignment="BASELINE_LEFT" graphicTextGap="15.0" onAction="#productos" prefHeight="43.0" prefWidth="250.0" styleClass="botones" text="Productos" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/caja.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btn_usuarios" alignment="BASELINE_LEFT" graphicTextGap="15.0" onAction="#usuarios" prefHeight="43.0" prefWidth="250.0" styleClass="botones" text="Usuarios" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/usuarios.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btn_reportes" alignment="BASELINE_LEFT" graphicTextGap="15.0" onAction="#reportes" prefHeight="43.0" prefWidth="250.0" styleClass="botones" text="Reportes" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/reporte.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btn_perfil" alignment="BASELINE_LEFT" graphicTextGap="15.0" onAction="#perfilEdit" prefHeight="43.0" prefWidth="250.0" styleClass="botones" text="Editar Perfil" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/editar-perfil.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btn_config" alignment="BASELINE_LEFT" graphicTextGap="15.0" onAction="#configuracion" prefHeight="43.0" prefWidth="250.0" styleClass="botones" text="Configuración" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/configuraciones.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></JFXButton>
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" top="20.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane fx:id="pPrincipal" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eef2f5;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="50.0" layoutY="43.0" prefHeight="212.0" prefWidth="571.0" style="-fx-background-radius: 15;" styleClass="orange-gradient" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="30.0">
+               <children>
+                  <ImageView fitHeight="190.0" fitWidth="190.0" layoutX="381.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/analytics.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="40.0" layoutY="60.0" text="Hola," textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="usuario" layoutX="166.0" layoutY="60.0" text="usuario!" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="130.0" text="Bienvenid@ de vuelta a" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="empresaName" layoutX="295.0" layoutY="130.0" text="Wc Inventory" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <QuadCurve controlX="129.0" controlY="110.0" endX="159.0" endY="-21.0" fill="#332b7d" layoutX="63.0" layoutY="21.0" startX="-49.0" startY="-21.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                  <QuadCurve controlX="-17.0" controlY="80.0" endX="153.0" endY="65.0" fill="#332b7d" layoutX="418.0" layoutY="132.0" startX="153.0" startY="-117.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" visible="false" />
+               </children>
+            </Pane>
+            <PieChart fx:id="grafica" labelsVisible="false" layoutX="30.0" layoutY="266.0" prefHeight="340.0" prefWidth="573.0" style="-fx-background-radius: 10; -fx-background-color: #fff;" title="TOP PRODUCTOS" AnchorPane.bottomAnchor="15.0" AnchorPane.topAnchor="266.0">
+               <effect>
+                  <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+               </effect></PieChart>
+            <Label fx:id="lFecha" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="921.0" layoutY="30.0" prefHeight="27.0" prefWidth="133.0" text="3/11/2021" AnchorPane.rightAnchor="15.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/calendar-clock-icon_34472.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label layoutX="620.0" layoutY="30.0" onMouseClicked="#finalizarApp" style="-fx-cursor: hand;" text="Cerrar Aplicación" textFill="#d5241c" AnchorPane.leftAnchor="620.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/apagar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <AnchorPane layoutX="821.0" layoutY="405.0" prefHeight="160.0" prefWidth="400.0" style="-fx-background-radius: 15; -fx-background-color: #848ef2;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="620.0" AnchorPane.rightAnchor="15.0">
+               <children>
+                  <Circle fill="#1f93ff00" layoutX="367.0" layoutY="62.0" radius="38.0" stroke="#e47b66" strokeType="INSIDE" strokeWidth="2.0" AnchorPane.rightAnchor="0.0" />
+                  <QuadCurve controlX="-25.0" controlY="-65.0" endX="28.0" fill="#fec37b" layoutX="245.0" layoutY="161.0" startX="-78.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" AnchorPane.rightAnchor="132.0" />
+                  <Label fx:id="nit" layoutX="5.0" layoutY="110.0" prefHeight="35.0" prefWidth="204.0" text="766.7377.343-2" textFill="WHITE" AnchorPane.leftAnchor="5.0">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/letter-logo-icon-along-business-illustration-template-nit-182904377.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label fx:id="telefono" alignment="CENTER_RIGHT" layoutX="232.0" layoutY="110.0" prefHeight="35.0" prefWidth="163.0" text="3147863456" textFill="WHITE" AnchorPane.rightAnchor="10.0">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/telephone.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label fx:id="slogan" alignment="CENTER" layoutX="11.0" prefHeight="78.0" prefWidth="384.0" text="¡Todo es posible y lo podemos lograr mediante metodos !" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="14.0" layoutY="95.0" prefWidth="200.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                  <Circle fill="#1f93ff00" layoutX="329.0" layoutY="88.0" radius="26.0" stroke="#fec37b" strokeType="INSIDE" strokeWidth="2.0" AnchorPane.rightAnchor="50.0" />
+                  <Circle fill="#1f93ff00" layoutX="53.0" layoutY="78.0" radius="17.0" stroke="#fec37b" strokeType="INSIDE" strokeWidth="2.0" />
+                  <Circle fill="#1f93ff00" layoutX="36.0" layoutY="61.0" radius="26.0" stroke="#e47b66" strokeType="INSIDE" strokeWidth="2.0" />
+               </children>
+               <effect>
+                  <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+               </effect>
+            </AnchorPane>
+            <AnchorPane layoutX="620.0" layoutY="59.0" prefHeight="183.0" prefWidth="405.0" style="-fx-background-color: #848ef2; -fx-background-radius: 15;" AnchorPane.leftAnchor="620.0" AnchorPane.rightAnchor="15.0">
+               <children>
+                  <Label layoutX="15.0" layoutY="24.0" text="Wc - Software" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <QuadCurve controlX="-2.0" controlY="115.0" endX="84.0" fill="#fec37b" layoutX="303.0" startX="-100.5" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" AnchorPane.rightAnchor="18.0" />
+                  <Label layoutX="14.0" layoutY="83.0" text="+25 Users" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/usuarioV3.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Circle fill="#1f93ff00" layoutX="339.0" layoutY="115.0" radius="38.0" stroke="#e47b66" strokeType="INSIDE" strokeWidth="2.0" AnchorPane.rightAnchor="28.0" />
+                  <Circle fill="#1f93ff00" layoutX="318.0" layoutY="153.0" radius="26.0" stroke="#fec37b" strokeType="INSIDE" strokeWidth="2.0" AnchorPane.rightAnchor="61.0" />
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="194.0" layoutY="140.0" onMouseClicked="#goFacebook" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" AnchorPane.rightAnchor="173.0">
+                     <image>
+                        <Image url="@../images/facebook.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="245.0" layoutY="140.0" onMouseClicked="#goWhatsapp" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" AnchorPane.rightAnchor="122.0">
+                     <image>
+                        <Image url="@../images/whatsapp%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="145.0" layoutY="140.0" onMouseClicked="#goInsta" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" AnchorPane.rightAnchor="222.0">
+                     <image>
+                        <Image url="@../images/instagram.png" />
+                     </image>
+                  </ImageView>
+                  <QuadCurve controlX="-25.0" controlY="-65.0" endX="28.0" fill="#fec37b" layoutX="88.0" layoutY="186.0" startX="-78.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                  <Label layoutX="318.0" layoutY="102.0" text="V 1.1" textFill="WHITE" AnchorPane.rightAnchor="44.0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label fx:id="lMes1" alignment="CENTER" layoutX="623.0" layoutY="270.0" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #54c792; -fx-background-radius: 10;" text="VENTAS ENERO" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="620.0" AnchorPane.rightAnchor="220.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#909090" />
+               </effect>
+            </Label>
+            <Label fx:id="lMes2" alignment="CENTER" layoutX="826.0" layoutY="270.0" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #ff584b; -fx-background-radius: 10;" text="VENTAS DICIEMBRE" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.rightAnchor="15.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#909090" />
+               </effect>
+            </Label>
+            <Label fx:id="lMes3" alignment="CENTER" layoutX="620.0" layoutY="360.0" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #b172fb; -fx-background-radius: 10;" text="VENTAS SEPTIEMBRE" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="620.0" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="360.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#909090" />
+               </effect>
+            </Label>
+            <Label fx:id="lMes4" alignment="CENTER" layoutX="825.0" layoutY="360.0" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #6c51fc; -fx-background-radius: 10;" text="VENTAS NOVIEMBRE" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="360.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#909090" />
+               </effect>
+            </Label>
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="791.0" layoutY="254.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="217.0">
+               <image>
+                  <Image url="@../images/calendario.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1009.0" layoutY="254.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0">
+               <image>
+                  <Image url="@../images/calendario.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="791.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="217.0">
+               <image>
+                  <Image url="@../images/calendario.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1009.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0">
+               <image>
+                  <Image url="@../images/calendario.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="84.0" fitWidth="84.0" layoutX="97.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/analysis.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="84.0" fitWidth="84.0" layoutX="478.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/shopping-mall.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+   </center>
+   <top>
+      <AnchorPane prefHeight="70.0" prefWidth="200.0" styleClass="linear-grad-to-left" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="nombre" alignment="CENTER" graphicTextGap="5.0" prefHeight="70.0" prefWidth="250.0" style="-fx-background-color: #171d2f;" text="Wc Inventory" textFill="WHITE" AnchorPane.leftAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="logo" fitHeight="54.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="6.0" layoutX="1019.0" layoutY="15.0" onMouseClicked="#cerrarSesion" prefHeight="41.0" prefWidth="186.0" style="-fx-cursor: hand;" styleClass="cerrar-sesion" text="Cerrar Sesión" textFill="#eeeeee" AnchorPane.rightAnchor="30.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/cerrar-sesion.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label fx:id="cargo" layoutX="264.0" layoutY="18.0" text="Usuario" textFill="#eeeeee">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/usuario-de-perfil.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

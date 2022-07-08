@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="almacenWC.jnlp">
+  <information>
+    <title>almacenWC</title>
+    <vendor>WilferC</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="almacenWC.jar" size="743593" download="eager" />
+    <jar href="lib\controlsfx-8.40.11.jar" size="985420" download="eager" />
+    <jar href="lib\jfoenix.jar" size="2176841" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.49.jar" size="1006904" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="views.AlmacenWC"  name="almacenWC" />
+  <update check="always"/>
+</jnlp>

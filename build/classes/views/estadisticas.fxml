@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1120.0" style="-fx-background-color: #eef2f5;" stylesheets="@../styles/login/DefaultTheme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EstadisticasController">
+   <children>
+      <AnchorPane layoutX="27.0" layoutY="35.0" prefHeight="453.0" prefWidth="619.0" style="-fx-background-color: #fff; -fx-background-radius: 15;" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="35.0">
+         <children>
+            <Label fx:id="azul1" layoutX="14.0" layoutY="76.0" prefHeight="50.0" prefWidth="405.0" style="-fx-background-color: #f2f6f9; -fx-background-radius: 15;" text="Monto de Ventas" textAlignment="CENTER" textFill="#4d515d" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/US-dollar_25324.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label fx:id="azul3" layoutX="10.0" layoutY="208.0" prefHeight="50.0" prefWidth="255.0" style="-fx-background-color: #f2f6f9; -fx-background-radius: 15;" text="Ventas Anuladas" textAlignment="CENTER" textFill="#4d515d" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/cancelarV3.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label fx:id="azul4" layoutX="10.0" layoutY="274.0" prefHeight="50.0" prefWidth="255.0" style="-fx-background-color: #f2f6f9; -fx-background-radius: 15;" text="Productos Vendidos" textAlignment="CENTER" textFill="#4d515d" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/recibido.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label fx:id="azul5" layoutX="10.0" layoutY="340.0" prefHeight="50.0" prefWidth="295.0" style="-fx-background-color: #f2f6f9; -fx-background-radius: 15;" text="Stock Vendido" textAlignment="CENTER" textFill="#4d515d" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/iconfinder-money-4341308_120564.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <JFXButton layoutX="402.0" layoutY="409.0" onAction="#verPanel2" prefHeight="39.0" prefWidth="195.0" style="-fx-cursor: hand;" text="Más Información">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/eye_focus_internet_scan_security_view_vision_icon_127102.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label layoutX="25.0" layoutY="20.0" text="Filtrar por:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/simbolo-de-herramienta-llena-de-filtro.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <JFXDatePicker fx:id="fecha1" defaultColor="#007cbe" editable="false" layoutX="226.0" layoutY="18.0" onAction="#loadAzulDia" prefHeight="32.0" prefWidth="162.0" promptText="Seleccione fecha" />
+            <JFXComboBox fx:id="comboMes" layoutX="226.0" layoutY="19.0" onAction="#loadAzulMes" prefWidth="162.0" promptText="Seleccione" style="-fx-font-size: 14;" visible="false" />
+            <Label fx:id="lfecha1" layoutX="255.0" layoutY="84.0" prefHeight="35.0" prefWidth="162.0" text="24/09/2021" textFill="#4d515d">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/calendar-clock-icon_34472.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label fx:id="lfecha3" layoutX="255.0" layoutY="216.0" prefHeight="35.0" prefWidth="162.0" text="24/09/2021" textFill="#4d515d">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/calendar-clock-icon_34472.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label fx:id="lfecha4" layoutX="255.0" layoutY="282.0" prefHeight="35.0" prefWidth="162.0" text="24/09/2021" textFill="#4d515d">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/calendar-clock-icon_34472.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label fx:id="lfecha5" layoutX="255.0" layoutY="348.0" prefHeight="35.0" prefWidth="162.0" text="24/09/2021" textFill="#4d515d">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/calendar-clock-icon_34472.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label fx:id="labelValor1" alignment="CENTER_RIGHT" layoutX="433.0" layoutY="84.0" prefHeight="27.0" prefWidth="150.0" text="\$0" textFill="#4d515d">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelValor3" alignment="CENTER_RIGHT" layoutX="433.0" layoutY="216.0" prefHeight="27.0" prefWidth="150.0" text="0" textFill="#4d515d">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelValor4" alignment="CENTER_RIGHT" layoutX="433.0" layoutY="282.0" prefHeight="27.0" prefWidth="150.0" text="0" textFill="#4d515d">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelValor5" alignment="CENTER_RIGHT" layoutX="433.0" layoutY="348.0" prefHeight="27.0" prefWidth="150.0" text="0" textFill="#4d515d">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelVentas" contentDisplay="RIGHT" layoutX="122.0" layoutY="410.0" onMouseClicked="#cambiarCompras" prefHeight="36.0" prefWidth="130.0" style="-fx-cursor: hand;" text="ventas" textFill="#007cbe">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/actualizar-flechas.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label layoutX="14.0" layoutY="415.0" text="Filtrar en:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/simbolo-de-herramienta-llena-de-filtro.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label fx:id="labelDia" contentDisplay="RIGHT" layoutX="142.0" layoutY="16.0" onMouseClicked="#verFecha1" prefHeight="36.0" prefWidth="84.0" style="-fx-cursor: hand;" text="DIA" textFill="#007cbe">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/actualizar-flechas.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label fx:id="azul2" layoutX="16.0" layoutY="142.0" prefHeight="50.0" prefWidth="255.0" style="-fx-background-color: #f2f6f9; -fx-background-radius: 15;" text="Ventas Realizadas" textAlignment="CENTER" textFill="#4d515d" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/factura.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label fx:id="lfecha2" layoutX="255.0" layoutY="150.0" prefHeight="35.0" prefWidth="162.0" text="24/09/2021" textFill="#4d515d">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/calendar-clock-icon_34472.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label fx:id="labelValor2" alignment="CENTER_RIGHT" layoutX="433.0" layoutY="150.0" prefHeight="27.0" prefWidth="150.0" text="0" textFill="#4d515d">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <JFXButton contentDisplay="RIGHT" layoutX="433.0" layoutY="12.0" onAction="#reestablecer1" style="-fx-cursor: hand;" text="Restablecer" textFill="#ffc37a">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/limpiar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+         </effect>
+      </AnchorPane>
+      <AnchorPane layoutX="650.0" layoutY="35.0" prefHeight="550.0" prefWidth="443.0" style="-fx-background-color: #fff; -fx-background-radius: 15;" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="35.0">
+         <effect>
+            <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+         </effect>
+         <children>
+            <PieChart fx:id="grafica1" labelsVisible="false" layoutX="34.0" layoutY="95.0" prefHeight="434.0" prefWidth="418.0" title="Productos mas vendidos" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+            <Label layoutX="25.0" layoutY="46.0" text="Filtrar por:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/simbolo-de-herramienta-llena-de-filtro.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <JFXDatePicker fx:id="fecha2" defaultColor="#007cbe" editable="false" layoutX="226.0" layoutY="44.0" onAction="#loadGrafica1DIA" prefHeight="32.0" prefWidth="162.0" promptText="Seleccione fecha" />
+            <Label fx:id="labelDia2" contentDisplay="RIGHT" layoutX="142.0" layoutY="42.0" onMouseClicked="#verFecha2" prefHeight="36.0" prefWidth="84.0" style="-fx-cursor: hand;" text="DIA" textFill="#007cbe">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/actualizar-flechas.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <JFXComboBox fx:id="comboMes2" layoutX="226.0" layoutY="45.0" onAction="#loadGrafica1MES" prefWidth="162.0" promptText="Seleccione" style="-fx-font-size: 14;" visible="false" />
+         </children>
+      </AnchorPane>
+      <Pane layoutX="20.0" layoutY="511.0" prefHeight="73.0" prefWidth="195.0" style="-fx-background-color: #ffa000; -fx-background-radius: 15;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Monto Ventas" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Separator layoutX="119.0" layoutY="4.0" orientation="VERTICAL" prefHeight="68.0" prefWidth="12.0" />
+            <Label fx:id="labelNaranja" layoutX="5.0" layoutY="39.0" text="SEPTIEMBRE/29/2021" textFill="WHITE" />
+            <Label fx:id="labelP1" layoutX="126.0" layoutY="22.0" text="0" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow color="#909090" />
+         </effect>
+      </Pane>
+      <Pane layoutX="230.0" layoutY="511.0" prefHeight="73.0" prefWidth="195.0" style="-fx-background-color: #332a7c; -fx-background-radius: 15;" AnchorPane.bottomAnchor="15.0">
+         <children>
+            <Label layoutX="6.0" layoutY="14.0" text="Monto Compras" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Separator layoutX="117.0" layoutY="4.0" orientation="VERTICAL" prefHeight="68.0" prefWidth="12.0" />
+            <Label fx:id="labelAzul" layoutX="5.0" layoutY="39.0" text="SEPTIEMBRE/29/2021" textFill="WHITE" />
+            <Label fx:id="labelP2" layoutX="124.0" layoutY="22.0" text="0" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow color="#909090" />
+         </effect>
+      </Pane>
+      <Pane layoutX="444.0" layoutY="511.0" prefHeight="73.0" prefWidth="195.0" style="-fx-background-color: #f25767; -fx-background-radius: 15;" AnchorPane.bottomAnchor="15.0">
+         <children>
+            <Label layoutX="27.0" layoutY="15.0" text="Porcentaje" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Separator layoutX="119.0" layoutY="4.0" orientation="VERTICAL" prefHeight="68.0" prefWidth="12.0" />
+            <Label fx:id="labelRojo" layoutX="5.0" layoutY="39.0" text="SEPTIEMBRE/29/2021" textFill="WHITE" />
+            <Label fx:id="labelPorcentaje" layoutX="125.0" layoutY="19.0" text="0%" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow color="#909090" />
+         </effect>
+      </Pane>
+      <AnchorPane fx:id="panel2" layoutX="30.0" layoutY="35.0" prefHeight="550.0" prefWidth="619.0" style="-fx-background-color: #fff; -fx-background-radius: 15;" visible="false" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="35.0">
+         <effect>
+            <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+         </effect>
+         <children>
+            <Label fx:id="Plabel1" alignment="CENTER" layoutX="53.0" layoutY="85.0" prefHeight="109.0" prefWidth="231.0" style="-fx-background-color: #ffa000; -fx-background-radius: 10;" text="ENERO" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="50.0">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#909090" />
+               </effect>
+            </Label>
+            <Label fx:id="Plabel2" alignment="CENTER" layoutX="322.0" layoutY="85.0" prefHeight="109.0" prefWidth="231.0" style="-fx-background-color: #52b36e; -fx-background-radius: 10;" text="FEBRERO" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.rightAnchor="50.0">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#909090" />
+               </effect>
+            </Label>
+            <Label fx:id="Plabel3" alignment="CENTER" layoutX="53.0" layoutY="230.0" prefHeight="109.0" prefWidth="231.0" style="-fx-background-color: #332a7c; -fx-background-radius: 10;" text="MARZO" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="50.0">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#909090" />
+               </effect>
+            </Label>
+            <Label fx:id="Plabel4" alignment="CENTER" layoutX="320.0" layoutY="230.0" prefHeight="109.0" prefWidth="231.0" style="-fx-background-color: #44b6ae; -fx-background-radius: 10;" text="ABRIL" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.rightAnchor="50.0">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#909090" />
+               </effect>
+            </Label>
+            <Label layoutX="53.0" layoutY="29.0" text="Mostrar registro de:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="comboP2" layoutX="266.0" layoutY="34.0" onAction="#cargarTarjetas" prefHeight="30.0" prefWidth="202.0" promptText="Seleccione" style="-fx-font-size: 14;" />
+            <Label alignment="CENTER" layoutX="570.0" layoutY="17.0" onMouseClicked="#cerrarP2" prefHeight="35.0" prefWidth="35.0" styleClass="login" text="X" />
+            <Label fx:id="Plabel5" alignment="CENTER" layoutX="50.0" layoutY="373.0" prefHeight="109.0" prefWidth="231.0" style="-fx-background-color: #7864ee; -fx-background-radius: 10;" text="MAYO" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="50.0">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#909090" />
+               </effect>
+            </Label>
+            <Label fx:id="Plabel6" alignment="CENTER" layoutX="320.0" layoutY="373.0" prefHeight="109.0" prefWidth="231.0" style="-fx-background-color: #f25767; -fx-background-radius: 10;" text="JUNIO" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.rightAnchor="50.0">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#909090" />
+               </effect>
+            </Label>
+            <ImageView fx:id="flechaAtras" fitHeight="32.0" fitWidth="32.0" layoutX="8.0" layoutY="269.0" onMouseClicked="#anteriorPagina" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" visible="false">
+               <image>
+                  <Image url="@../images/flecha-correctav2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="flechaAdelante" fitHeight="32.0" fitWidth="32.0" layoutX="579.0" layoutY="269.0" onMouseClicked="#siguientePagina" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" visible="false">
+               <image>
+                  <Image url="@../images/flecha-correcta.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

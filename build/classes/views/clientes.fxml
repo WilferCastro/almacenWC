@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="620.0" prefWidth="1120.0" style="-fx-background-color: #eef2f5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ClientesController">
+   <children>
+      <AnchorPane layoutY="84.0" prefHeight="527.0" prefWidth="1047.0" style="-fx-background-color: #fff; -fx-background-radius: 10;" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+         <children>
+            <TableView fx:id="tabla" layoutY="128.0" onMouseClicked="#getData" prefHeight="316.0" prefWidth="1060.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="idCliente" prefWidth="61.0" text="ID" />
+                <TableColumn fx:id="cliente" prefWidth="284.0" text="Cliente" />
+                  <TableColumn fx:id="documento" minWidth="0.0" prefWidth="194.0" text="N° Documento" />
+                  <TableColumn fx:id="residencia" prefWidth="314.0" text="Residencia" />
+                  <TableColumn fx:id="telefono" minWidth="0.0" prefWidth="188.0" text="N° Teléfono" />
+                  <TableColumn fx:id="correo" prefWidth="138.0" text="Correo " visible="false" />
+                  <TableColumn fx:id="fecha" prefWidth="164.0" text="Fecha de registro" visible="false" />
+                  <TableColumn fx:id="adicional" prefWidth="135.0" text="Adicional" visible="false" />
+              </columns>
+            </TableView>
+            <JFXTextField fx:id="buscador" layoutX="53.0" layoutY="76.0" maxWidth="369.0" minWidth="149.0" onKeyTyped="#buscarCliente" prefHeight="40.0" prefWidth="369.0" promptText="Buscar Cliente" unFocusColor="BLACK">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXTextField>
+            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="14.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/lupa.png" />
+               </image>
+            </ImageView>
+            <Separator layoutX="8.0" layoutY="70.0" prefHeight="4.0" prefWidth="1052.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <Label layoutX="14.0" layoutY="21.0" text="Listado de Clientes">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="contador" alignment="CENTER" layoutY="466.0" prefHeight="35.0" prefWidth="48.0" text="5">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="53.0" layoutY="469.0" text="Clientes en total">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnAdicional" buttonType="RAISED" layoutX="560.0" layoutY="465.0" onAction="#infoAdicional" prefHeight="40.0" prefWidth="177.0" style="-fx-background-color: #198754; -fx-background-radius: 20; -fx-cursor: hand;" text="Info Adicional" textFill="WHITE" visible="false" AnchorPane.rightAnchor="323.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/informacion.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnEliminar" buttonType="RAISED" layoutX="914.0" layoutY="465.0" onAction="#eliminar" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: F05454; -fx-background-radius: 20; -fx-cursor: hand;" text="Eliminar" textFill="WHITE" visible="false" AnchorPane.rightAnchor="14.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/basura.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnEditar" buttonType="RAISED" layoutX="752.0" layoutY="465.0" onAction="#editar" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #1977f3; -fx-background-radius: 20; -fx-cursor: hand;" text="Editar" textFill="WHITE" visible="false" AnchorPane.rightAnchor="168.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/editar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnCancelar" buttonType="RAISED" layoutX="404.0" layoutY="465.0" onAction="#cancelar" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #6c757d; -fx-background-radius: 20; -fx-cursor: hand;" text="Cancelar" textFill="WHITE" visible="false" AnchorPane.rightAnchor="516.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/senal.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow color="#909090" height="37.0" radius="18.0" width="37.0" />
+         </effect>
+      </AnchorPane>
+      <JFXButton fx:id="btnNuevo" buttonType="RAISED" contentDisplay="RIGHT" layoutX="826.0" layoutY="28.0" onAction="#addCliente" prefHeight="40.0" prefWidth="183.0" style="-fx-background-color: #3f51b5; -fx-cursor: hand;" text="Nuevo Cliente" textFill="WHITE" AnchorPane.rightAnchor="30.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/agregar-archivo.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+   <stylesheets>
+      <URL value="@../styles/style.css" />
+      <URL value="@../styles/tables.css" />
+   </stylesheets>
+</AnchorPane>
